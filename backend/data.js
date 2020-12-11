@@ -7,7 +7,7 @@ export default {
       image: '/images/product-1.jpg',
       price: 59,
       brand: 'Hiskywin',
-      rating: 2.5,
+      rating: 4.5,
       numReviews: 10,
       countInStock: 6,
     },
