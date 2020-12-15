@@ -3,6 +3,14 @@ import {getProduct} from '../api';
 import Rating from "../components/Rating";
 
 const ProductScreen = {
+
+    after_render: () => {
+        const request = parseRequestUrl();
+        document.getElementById('add-button').addEventListener('click', () => {
+            document.location.hash = `/cart/${request.id}`;
+        });
+    },
+
     render: async () => {
         const request = parseRequestUrl();
         const product = await getProduct(request.id);
@@ -43,7 +51,7 @@ const ProductScreen = {
                     <div class="details-action">
                         <ul>
                             <li>
-                                Price: ${product.price}
+                                Price: $${product.price}
                             </li>
                             <li>
                                 Status: 
